@@ -183,7 +183,7 @@ void main() {
   print("Метод");
   var met = stdin.readLineSync()!;
 
-  if (met == "Ариф") {
+  if (met == "arifm") {
     print("oper");
     var oper = stdin.readLineSync()!;
 
@@ -222,7 +222,7 @@ void main() {
         print(pow(a, b));
         break;
     }
-  } else if (met == "Срав") {
+  } else if (met == "srav") {
     print("oper");
     var oper = stdin.readLineSync()!;
     switch (oper) {
@@ -245,7 +245,7 @@ void main() {
         print(a <= b);
         break;
     }
-  } else if (met == "Логика") {
+  } else if (met == "log") {
     print("oper");
     var oper = stdin.readLineSync()!;
     print('Проверка на уровнение');
