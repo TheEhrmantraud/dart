@@ -176,89 +176,201 @@ void main() {
   // double c = v > d ? v - d : v / d;
   // print(c);
 
-  print("1 chislo: ");
-  var a = double.parse(stdin.readLineSync()!);
-  print("2 chislo: ");
-  var b = double.parse(stdin.readLineSync()!);
-  print("Метод");
-  var met = stdin.readLineSync()!;
+  // print("1 chislo: ");
+  // var a = double.parse(stdin.readLineSync()!);
+  // print("2 chislo: ");
+  // var b = double.parse(stdin.readLineSync()!);
+  // print("Метод");
+  // var met = stdin.readLineSync()!;
 
-  if (met == "arifm") {
-    print("oper");
-    var oper = stdin.readLineSync()!;
+  // if (met == "arifm") {
+  //   print("oper");
+  //   var oper = stdin.readLineSync()!;
 
-    switch (oper) {
-      case "+":
-        print(a + b);
-        break;
-      case "-":
-        print(a - b);
-        break;
-      case "*":
-        print(a * b);
-        break;
-      case "/":
-        if (b != 0) {
-          print(a / b);
-        } else {
-          print("Деление на 0");
-        }
-        break;
-      case "%":
-        if (b != 0) {
-          print(a % b);
-        } else {
-          print("Деление на 0");
-        }
-        break;
-      case "~/":
-        if (b != 0) {
-          print(a ~/ b);
-        } else {
-          print("Деление на 0");
-        }
-        break;
-      case "pow":
-        print(pow(a, b));
-        break;
-    }
-  } else if (met == "srav") {
-    print("oper");
-    var oper = stdin.readLineSync()!;
-    switch (oper) {
-      case "==":
-        print(a == b);
-        break;
-      case '!=':
-        print(a != b);
-        break;
-      case '>':
-        print(a > b);
-        break;
-      case '<':
-        print(a < b);
-        break;
-      case '>=':
-        print(a >= b);
-        break;
-      case '<=':
-        print(a <= b);
-        break;
-    }
-  } else if (met == "log") {
-    print("oper");
-    var oper = stdin.readLineSync()!;
-    print('Проверка на уровнение');
-    switch (oper) {
-      case "&&":
-        print(a % b == 0 && a / 2 == 0);
-        break;
-      case "||":
-        print(a % b == 0 || a / 2 == 0);
-        break;
-      case "!":
-        print(a % b != 0 && a / 2 != 0 && b / 2 != 0);
-        break;
-    }
-  }
+  //   switch (oper) {
+  //     case "+":
+  //       print(a + b);
+  //       break;
+  //     case "-":
+  //       print(a - b);
+  //       break;
+  //     case "*":
+  //       print(a * b);
+  //       break;
+  //     case "/":
+  //       if (b != 0) {
+  //         print(a / b);
+  //       } else {
+  //         print("Деление на 0");
+  //       }
+  //       break;
+  //     case "%":
+  //       if (b != 0) {
+  //         print(a % b);
+  //       } else {
+  //         print("Деление на 0");
+  //       }
+  //       break;
+  //     case "~/":
+  //       if (b != 0) {
+  //         print(a ~/ b);
+  //       } else {
+  //         print("Деление на 0");
+  //       }
+  //       break;
+  //     case "pow":
+  //       print(pow(a, b));
+  //       break;
+  //   }
+  // } else if (met == "srav") {
+  //   print("oper");
+  //   var oper = stdin.readLineSync()!;
+  //   switch (oper) {
+  //     case "==":
+  //       print(a == b);
+  //       break;
+  //     case '!=':
+  //       print(a != b);
+  //       break;
+  //     case '>':
+  //       print(a > b);
+  //       break;
+  //     case '<':
+  //       print(a < b);
+  //       break;
+  //     case '>=':
+  //       print(a >= b);
+  //       break;
+  //     case '<=':
+  //       print(a <= b);
+  //       break;
+  //   }
+  // } else if (met == "log") {
+  //   print("oper");
+  //   var oper = ;
+  //   print('Проверка на уровнение');
+  //   switch (oper) {
+  //     case "&&":
+  //       print(a % b == 0 && a / 2 == 0);
+  //       break;
+  //     case "||":
+  //       print(a % b == 0 || a / 2 == 0);
+  //       break;
+  //     case "!":
+  //       print(a % b != 0 && a / 2 != 0 && b / 2 != 0);
+  //       break;
+  //   }
+  // }
+
+  //ЕСли переменные нулл
+  // stdin.readLineSync()!;
+
+  // String? nick;
+  // print(nick ?? "Гость"); //Если пусто то берет гость
+
+  // String? nfwn;
+  // print(nfwn ??= "Название"); // Если нул то присваивает один раз
+
+  // String? x;
+  // print(x?.length); //Безопасный доступ??????
+
+  // int? y = x?.length;
+  // print(y);
+
+  // //Динамический тип
+  // dynamic? s = true;
+  // s = 7;
+  // s = 0.9;
+  // s = "";
+  // print(s);
+
+  // //Объекты
+  // Object? d;
+  // d = 0;
+  // d = "666";
+
+  // print((d as String).length);
+  // d = true;
+
+  // //Задачи
+  // String? name2 = null;
+  // print(name2 ?? 0);
+
+  // int? count = null;
+  // print(count ??= 0);
+
+  // String? text1 = null;
+  // text1?.length ?? -1; //Присваивает -1 если длина Null
+  // print(text1);
+
+  // List<String>? item = null;
+  // print(item?.length ?? 0);
+
+  // String? email;
+  // print(email ?? "ne");
+
+  List kakajke = [1, 2, 4, 5, "f"];
+  List<int> s = [1, 2, 4, 5];
+  List<String> s1 = ["a", "b"];
+  List<int?> fil = List.filled(5, null);
+
+  List<int> s3 = List.generate(5, (int x) => x * 2);
+
+  List<int> f = List.from(s3); //Копирование эелементов другого списка
+
+  const List<int> s4 = [1, 2];
+  final s5 = [3, 4];
+
+  // print(s5[0]); = print(s5.first);
+  print(s5.last);
+  print(s5.elementAt(2)); //По индексу
+  print(s5.length);
+  print(s5.reversed);
+  print(s5.isEmpty);
+
+  s5.add(5);
+  s5.addAll([8, 9, 5, 6]);
+  s5.insert(1, 3);
+  s5.remove(3);
+  s5.removeLast();
+  s5.removeWhere((element) => element % 2 == 0);
+
+  // s5.fillRange(start, end, na chto) замена элементов
+
+  s5.contains(1); //поиск
+  s5.any((x) => x > 4);
+  s5.every((x) => x > 4);
+
+  s5.sort();
+
+  List<String> z1 = ["Яблокэ", "Банани", "Апенсыны", "РЕбенок", "дяды"];
+  print(z1);
+  List<int?> z2 = [];
+  z2.addAll([1, 2, 3, 4, 5]);
+
+  List<int> z3 = [1, 2, 3, 4, 5, 6, 7];
+  print(z3.length);
+
+  List<int?> s1214 = [...z3, 5, 6];
+
+  //Множества
+  Set<int?> set1 = {1, 2, 3, 4, 5, null}; //могут быть знаечния нулл
+  Set<int>? set2 =
+      null; //Множество может быть либо фулл пустым либо заполненным
+  print(set1.length);
+
+  Set<int> set12 = {1, 2, 3, 5, 6};
+  print(set12.map((s) => s * 2));
+  print(set12.where((s) => s >= 0)); //поиск по условмию
+
+  Set<int> set123 = Set.from(
+    set12.where((s) => s % 2 == 0),
+  ); //копия спика отфитрованная
+
+  Set<int> set456 = {1, 2, 3};
+  Set<int> set789 = {4, 5, 6};
+  print(set456.union(set789)); //Сложение двух множеств
+
+  print(set123.contains(3)); //поиск эелемента вывод в тру
+  print(set123.containsAll({1, 2, 3}));
 }
