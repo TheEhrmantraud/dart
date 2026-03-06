@@ -309,68 +309,330 @@ void main() {
   // String? email;
   // print(email ?? "ne");
 
-  List kakajke = [1, 2, 4, 5, "f"];
-  List<int> s = [1, 2, 4, 5];
-  List<String> s1 = ["a", "b"];
-  List<int?> fil = List.filled(5, null);
+  // List kakajke = [1, 2, 4, 5, "f"];
+  // List<int> s = [1, 2, 4, 5];
+  // List<String> s1 = ["a", "b"];
+  // List<int?> fil = List.filled(5, null);
 
-  List<int> s3 = List.generate(5, (int x) => x * 2);
+  // List<int> s3 = List.generate(5, (int x) => x * 2);
 
-  List<int> f = List.from(s3); //Копирование эелементов другого списка
+  // List<int> f = List.from(s3); //Копирование эелементов другого списка
 
-  const List<int> s4 = [1, 2];
-  final s5 = [3, 4];
+  // const List<int> s4 = [1, 2];
+  // final s5 = [3, 4];
 
-  // print(s5[0]); = print(s5.first);
-  print(s5.last);
-  print(s5.elementAt(2)); //По индексу
-  print(s5.length);
-  print(s5.reversed);
-  print(s5.isEmpty);
+  // // print(s5[0]); = print(s5.first);
+  // print(s5.last);
+  // print(s5.elementAt(2)); //По индексу
+  // print(s5.length);
+  // print(s5.reversed);
+  // print(s5.isEmpty);
 
-  s5.add(5);
-  s5.addAll([8, 9, 5, 6]);
-  s5.insert(1, 3);
-  s5.remove(3);
-  s5.removeLast();
-  s5.removeWhere((element) => element % 2 == 0);
+  // s5.add(5);
+  // s5.addAll([8, 9, 5, 6]);
+  // s5.insert(1, 3);
+  // s5.remove(3);
+  // s5.removeLast();
+  // s5.removeWhere((element) => element % 2 == 0);
 
-  // s5.fillRange(start, end, na chto) замена элементов
+  // // s5.fillRange(start, end, na chto) замена элементов
 
-  s5.contains(1); //поиск
-  s5.any((x) => x > 4);
-  s5.every((x) => x > 4);
+  // s5.contains(1); //поиск
+  // s5.any((x) => x > 4);
+  // s5.every((x) => x > 4);
 
-  s5.sort();
+  // s5.sort();
 
-  List<String> z1 = ["Яблокэ", "Банани", "Апенсыны", "РЕбенок", "дяды"];
-  print(z1);
-  List<int?> z2 = [];
-  z2.addAll([1, 2, 3, 4, 5]);
+  // List<String> z1 = ["Яблокэ", "Банани", "Апенсыны", "РЕбенок", "дяды"];
+  // print(z1);
+  // List<int?> z2 = [];
+  // z2.addAll([1, 2, 3, 4, 5]);
 
-  List<int> z3 = [1, 2, 3, 4, 5, 6, 7];
-  print(z3.length);
+  // List<int> z3 = [1, 2, 3, 4, 5, 6, 7];
+  // print(z3.length);
 
-  List<int?> s1214 = [...z3, 5, 6];
+  // List<int?> s1214 = [...z3, 5, 6];
 
-  //Множества
-  Set<int?> set1 = {1, 2, 3, 4, 5, null}; //могут быть знаечния нулл
-  Set<int>? set2 =
-      null; //Множество может быть либо фулл пустым либо заполненным
-  print(set1.length);
+  // //Множества
+  // Set<int?> set1 = {1, 2, 3, 4, 5, null}; //могут быть знаечния нулл
+  // Set<int>? set2 =
+  //     null; //Множество может быть либо фулл пустым либо заполненным
+  // print(set1.length);
 
-  Set<int> set12 = {1, 2, 3, 5, 6};
-  print(set12.map((s) => s * 2));
-  print(set12.where((s) => s >= 0)); //поиск по условмию
+  // Set<int> set12 = {1, 2, 3, 5, 6};
+  // print(set12.map((s) => s * 2));
+  // print(set12.where((s) => s >= 0)); //поиск по условмию
 
-  Set<int> set123 = Set.from(
-    set12.where((s) => s % 2 == 0),
-  ); //копия спика отфитрованная
+  // Set<int> set123 = Set.from(
+  //   set12.where((s) => s % 2 == 0),
+  // ); //копия спика отфитрованная
 
-  Set<int> set456 = {1, 2, 3};
-  Set<int> set789 = {4, 5, 6};
-  print(set456.union(set789)); //Сложение двух множеств
+  // Set<int> set456 = {1, 2, 3};
+  // Set<int> set789 = {4, 5, 6};
+  // print(set456.union(set789)); //Сложение двух множеств
 
-  print(set123.contains(3)); //поиск эелемента вывод в тру
-  print(set123.containsAll({1, 2, 3}));
+  // print(set123.contains(3)); //поиск эелемента вывод в тру
+  // print(set123.containsAll({1, 2, 3}));
+
+  // Set<String> s2ie289 = {"Голуюой", "Годубой", "голубой", "голубой", "голубой"};
+  // Set<int> sqeu92e = {};
+  // sqeu92e.addAll({1, 2, 3, 4, 5});
+
+  // Set<int> nums = {10, 20, 30, 20, 10};
+  // print(nums.length);
+
+  // Set<String> nums4 = {"яблоко", "банан", "апельсин"};
+  // print(nums4.containsAll({"яблоко", "банан"}));
+
+  //   Set<int> removeSet = {1, 2, 3, 4, 5};
+  //   removeSet.remove(3);
+  //   removeSet.remove(10);
+  //   print(removeSet);
+
+  //   List<int> list = [1, 2, 2, 3, 3, 3, 4, 5];
+  //   print(list.toSet());
+
+  //   Set<int> a = {1, 2, 3, 4, 5};
+  //   Set<int> b = {3, 4, 5, 6, 7};
+  //   print(a.intersection(b));
+
+  //   Set<int> c = {1, 2, 3};
+  //   Set<int> d = {3, 4, 5};
+  //   print(c.union(d));
+
+  //   print(a.difference({3, 4, 5}));
+
+  //   // Подмножество
+  //   Set<int> sub1 = {1, 2};
+  //   Set<int> sub2 = {1, 2, 3, 4, 5};
+  //   print(sub2.containsAll(sub1));
+
+  //   Set<int> nums10 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+  //   nums10.removeWhere((e) => e % 2 == 0);
+  //   print(nums10);
+
+  //   Set<int> mult = {1, 2, 3, 4, 5};
+  //   print(mult.map((e) => e * 2).toSet());
+
+  //   Set<int> big = {10, 20, 30, 40, 50, 60};
+  //   print(big.where((e) => e > 30).toSet());
+
+  //   Set<int> s133 = {1, 2, 3};
+  //   Set<int> s2 = {3, 2, 1};
+  //   print(s1.length == s2.length && s133.containsAll(s2));
+
+  //   // Уникальные и обратно в список
+  //   List<int> list2 = [1, 2, 2, 3, 3, 3, 4, 5, 5];
+  //   print(list2.toSet().toList());
+
+  //   // Чётные и нечётные
+  //   Set<int> full = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+  //   print(full.where((e) => e % 2 == 0).toSet());
+  //   print(full.where((e) => e % 2 != 0).toSet());
+
+  //   // Уникальные символы
+  //   String text = "hello world";
+  //   print(text.replaceAll(' ', '').split('').toSet());
+
+  //   Set<int> nums2 = {10, 15, 20, 25, 30, 35, 40};
+  //   print(nums2.where((e) => e % 5 == 0 && e > 20).toSet());
+
+  //   Set<int> check1 = {5, 6, 7};
+  //   Set<int> check2 = {7, 6, 5};
+  //   print(check1.length == check2.length && check1.containsAll(check2));
+
+  // Map<String, int> map1 = {"Анна": 50, "Дарья": 40};
+
+  // print(map1);
+
+  // Map<int, int> map2 = {1: 1};
+
+  // List<Map<String, int>> map3 = [{}];
+
+  // Map<String, int> d = Map.from(map1);
+
+  // int? Anna_Name = d["AHHa"];
+  // int? Dasha_Name = d["Aawa"];
+  // print(Anna_Name);
+  // print(Dasha_Name);
+
+  // if (map1.containsKey("AHHa")) {
+  //   print(map1["AHHa"]);
+  // } else {
+  //   print("Не найден такой ключ");
+  // }
+
+  // map1.addAll({"Андрей": 45, "Петр": 34});
+  // print(map1);
+
+  // map1.putIfAbsent("AHHa", () => 100); //если ключа нет добавляет
+
+  // Задание 1. Разработать консольное приложение «Журнал успеваемости группы».
+
+  // В приложении должны быть заданы: список студентов группы (не менее 6 человек), список учебных предметов (не менее 4), а также оценки каждого студента по каждому предмету (оценки от 2 до 5).
+
+  // Приложение должно выполнять следующее:
+
+  List<String> name = ["Ксюня", "Ваня", "Антон", "Назар", "Ася", "ДЕниска"];
+
+  List<List<int>> ochenki = [
+    [5, 5, 5, 5],
+    [5, 4, 5, 5],
+    [5, 5, 5, 5],
+    [4, 4, 3, 5],
+    [4, 4, 4, 4],
+    [3, 3, 2, 5],
+  ];
+
+  List<String> predmeti = ["ОСИСЯ", "БД", "КИСКИС", "ДжаВа"];
+
+  // Map<String, List<int>> ychenik = {
+  //   "Ксюня": [5, 5, 5, 5],
+  //   "Ваня": [5, 4, 5, 5],
+  //   "Антон": [5, 5, 5, 5],
+  //   "Назар": [4, 4, 3, 5],
+  //   "Ася": [4, 4, 4, 4],
+  //   "ДЕниска": [3, 3, 2, 5],
+  // };
+
+  //Задание 1 (Выводить полный список студентов с нумерацией и полный список предметов.)
+  for (var i = 0; i < name.length; i++) {
+    print('Ученик номер: ${i + 1}. ФИО: ${name[i]}');
+  }
+  print('\nПредметы:');
+  for (var i = 0; i < predmeti.length; i++) {
+    print(predmeti[i]);
+  }
+
+  // ЗАдание 2 Выводить для каждого студента все его оценки
+  //по предметам в виде таблицы или построчно (студент — предмет: оценка).
+
+  for (var i = 0; i < name.length; i++) {
+    for (var j = 0; j < predmeti.length; j++) {
+      print(
+        "Ученик: ${name[i]} Предмет: ${predmeti[j]} Оценка: ${ochenki[i][j]}",
+      );
+      if (j == 3) {
+        print("");
+      }
+    }
+  }
+
+  // Задание 3 Вычислять и выводить средний балл по каждому предмету в группе
+  //(по каждому предмету отдельно).
+  for (var j = 0; j < predmeti.length; j++) {
+    double sum = 0;
+
+    for (var i = 0; i < ochenki.length; i++) {
+      sum += ochenki[i][j];
+    }
+
+    print("Средний балл по предмету: ${predmeti[j]} (${sum / ochenki.length})");
+  }
+  print("");
+
+  // Задание 4 Вычислять и выводить средний балл каждого студента по всем его предметам.
+  for (var i = 0; i < name.length; i++) {
+    double sum = 0;
+    for (var j = 0; j < ochenki[i].length; j++) {
+      sum += ochenki[i][j];
+    }
+    print("Ученик: ${name[i]} Его средних балл: ${sum / ochenki[i].length}");
+  }
+
+  // Задание 5 Определять и выводить лучшего студента по среднему баллу (имя и средний балл).
+  double maxAvg = 0;
+  String bestStudent = "";
+
+  for (var i = 0; i < name.length; i++) {
+    double sum = 0;
+
+    for (var j = 0; j < ochenki[i].length; j++) {
+      sum += ochenki[i][j];
+    }
+
+    double avg = sum / ochenki[i].length;
+
+    if (avg > maxAvg) {
+      maxAvg = avg;
+      bestStudent = name[i];
+    }
+  }
+
+  print("Лучший студент: $bestStudent со средним баллом $maxAvg");
+
+  // Задание 6 Определять и выводить предмет с наименьшим средним баллом в группе.
+  double minAvg = 999;
+  String worstSubject = "";
+
+  for (var j = 0; j < predmeti.length; j++) {
+    double sum = 0;
+
+    for (var i = 0; i < ochenki.length; i++) {
+      sum += ochenki[i][j];
+    }
+
+    double avg = sum / ochenki.length;
+
+    if (avg < minAvg) {
+      minAvg = avg;
+      worstSubject = predmeti[j];
+    }
+  }
+
+  print("Предмет с самым низким средним баллом: $worstSubject ($minAvg)");
+
+  // - Выводить общий средний балл по всей группе (по всем студентам и всем предметам).
+  double sum = 0;
+  int count = 0;
+
+  for (var i = 0; i < ochenki.length; i++) {
+    for (var j = 0; j < ochenki[i].length; j++) {
+      sum += ochenki[i][j];
+      count++;
+    }
+  }
+
+  print("Общий средний балл группы: ${sum / count}");
+
+  // - Формировать и выводить перечень всех предметов без повторов и их количество.
+  Set<String> bezpovtor = predmeti.toSet();
+
+  print("Предметы:");
+  for (var s in bezpovtor) {
+    print(s);
+  }
+  print("Количество предметов: ${bezpovtor.length}");
+
+  // - Выводить имена студентов, у которых нет ни одной оценки 2.
+  for (var i = 0; i < name.length; i++) {
+    bool hasTwo = false;
+
+    for (var j = 0; j < ochenki[i].length; j++) {
+      if (ochenki[i][j] == 2) {
+        hasTwo = true;
+        break;
+      }
+    }
+
+    if (!hasTwo) {
+      print("Без двоек: ${name[i]}");
+    }
+  }
+
+  // - Выводить имена студентов, у которых все оценки не ниже 4.
+  for (var i = 0; i < name.length; i++) {
+    bool goodStudent = true;
+
+    for (var j = 0; j < ochenki[i].length; j++) {
+      if (ochenki[i][j] < 4) {
+        goodStudent = false;
+        break;
+      }
+    }
+
+    if (goodStudent) {
+      print("Все оценки >=4: ${name[i]}");
+    }
+  }
 }
