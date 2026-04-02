@@ -4,6 +4,7 @@
 
 import 'dart:io';
 import 'dart:math';
+import 'dart:convert';
 
 void main() {
   // int a = 6;
@@ -473,18 +474,18 @@ void main() {
 
   // Приложение должно выполнять следующее:
 
-  List<String> name = ["Ксюня", "Ваня", "Антон", "Назар", "Ася", "ДЕниска"];
+  // List<String> name = ["Ксюня", "Ваня", "Антон", "Назар", "Ася", "ДЕниска"];
 
-  List<List<int>> ochenki = [
-    [5, 5, 5, 5],
-    [5, 4, 5, 5],
-    [5, 5, 5, 5],
-    [4, 4, 3, 5],
-    [4, 4, 4, 4],
-    [3, 3, 2, 5],
-  ];
+  // List<List<int>> ochenki = [
+  //   [5, 5, 5, 5],
+  //   [5, 4, 5, 5],
+  //   [5, 5, 5, 5],
+  //   [4, 4, 3, 5],
+  //   [4, 4, 4, 4],
+  //   [3, 3, 2, 5],
+  // ];
 
-  List<String> predmeti = ["ОСИСЯ", "БД", "КИСКИС", "ДжаВа"];
+  // List<String> predmeti = ["ОСИСЯ", "БД", "КИСКИС", "ДжаВа"];
 
   // Map<String, List<int>> ychenik = {
   //   "Ксюня": [5, 5, 5, 5],
@@ -495,144 +496,372 @@ void main() {
   //   "ДЕниска": [3, 3, 2, 5],
   // };
 
-  //Задание 1 (Выводить полный список студентов с нумерацией и полный список предметов.)
-  for (var i = 0; i < name.length; i++) {
-    print('Ученик номер: ${i + 1}. ФИО: ${name[i]}');
-  }
-  print('\nПредметы:');
-  for (var i = 0; i < predmeti.length; i++) {
-    print(predmeti[i]);
-  }
+  // //Задание 1 (Выводить полный список студентов с нумерацией и полный список предметов.)
+  // for (var i = 0; i < name.length; i++) {
+  //   print('Ученик номер: ${i + 1}. ФИО: ${name[i]}');
+  // }
+  // print('\nПредметы:');
+  // for (var i = 0; i < predmeti.length; i++) {
+  //   print(predmeti[i]);
+  // }
 
-  // ЗАдание 2 Выводить для каждого студента все его оценки
-  //по предметам в виде таблицы или построчно (студент — предмет: оценка).
+  // // ЗАдание 2 Выводить для каждого студента все его оценки
+  // //по предметам в виде таблицы или построчно (студент — предмет: оценка).
 
-  for (var i = 0; i < name.length; i++) {
-    for (var j = 0; j < predmeti.length; j++) {
-      print(
-        "Ученик: ${name[i]} Предмет: ${predmeti[j]} Оценка: ${ochenki[i][j]}",
-      );
-      if (j == 3) {
-        print("");
-      }
+  // for (var i = 0; i < name.length; i++) {
+  //   for (var j = 0; j < predmeti.length; j++) {
+  //     print(
+  //       "Ученик: ${name[i]} Предмет: ${predmeti[j]} Оценка: ${ochenki[i][j]}",
+  //     );
+  //     if (j == 3) {
+  //       print("");
+  //     }
+  //   }
+  // }
+
+  // // Задание 3 Вычислять и выводить средний балл по каждому предмету в группе
+  // //(по каждому предмету отдельно).
+  // for (var j = 0; j < predmeti.length; j++) {
+  //   double sum = 0;
+
+  //   for (var i = 0; i < ochenki.length; i++) {
+  //     sum += ochenki[i][j];
+  //   }
+
+  //   print("Средний балл по предмету: ${predmeti[j]} (${sum / ochenki.length})");
+  // }
+  // print("");
+
+  // // Задание 4 Вычислять и выводить средний балл каждого студента по всем его предметам.
+  // for (var i = 0; i < name.length; i++) {
+  //   double sum = 0;
+  //   for (var j = 0; j < ochenki[i].length; j++) {
+  //     sum += ochenki[i][j];
+  //   }
+  //   print("Ученик: ${name[i]} Его средних балл: ${sum / ochenki[i].length}");
+  // }
+
+  // // Задание 5 Определять и выводить лучшего студента по среднему баллу (имя и средний балл).
+  // double maxAvg = 0;
+  // String bestStudent = "";
+
+  // for (var i = 0; i < name.length; i++) {
+  //   double sum = 0;
+
+  //   for (var j = 0; j < ochenki[i].length; j++) {
+  //     sum += ochenki[i][j];
+  //   }
+
+  //   double avg = sum / ochenki[i].length;
+
+  //   if (avg > maxAvg) {
+  //     maxAvg = avg;
+  //     bestStudent = name[i];
+  //   }
+  // }
+
+  // print("Лучший студент: $bestStudent со средним баллом $maxAvg");
+
+  // // Задание 6 Определять и выводить предмет с наименьшим средним баллом в группе.
+  // double minAvg = 999;
+  // String worstSubject = "";
+
+  // for (var j = 0; j < predmeti.length; j++) {
+  //   double sum = 0;
+
+  //   for (var i = 0; i < ochenki.length; i++) {
+  //     sum += ochenki[i][j];
+  //   }
+
+  //   double avg = sum / ochenki.length;
+
+  //   if (avg < minAvg) {
+  //     minAvg = avg;
+  //     worstSubject = predmeti[j];
+  //   }
+  // }
+
+  // print("Предмет с самым низким средним баллом: $worstSubject ($minAvg)");
+
+  // // - Выводить общий средний балл по всей группе (по всем студентам и всем предметам).
+  // double sum = 0;
+  // int count = 0;
+
+  // for (var i = 0; i < ochenki.length; i++) {
+  //   for (var j = 0; j < ochenki[i].length; j++) {
+  //     sum += ochenki[i][j];
+  //     count++;
+  //   }
+  // }
+
+  // print("Общий средний балл группы: ${sum / count}");
+
+  // // - Формировать и выводить перечень всех предметов без повторов и их количество.
+  // Set<String> bezpovtor = predmeti.toSet();
+
+  // print("Предметы:");
+  // for (var s in bezpovtor) {
+  //   print(s);
+  // }
+  // print("Количество предметов: ${bezpovtor.length}");
+
+  // // - Выводить имена студентов, у которых нет ни одной оценки 2.
+  // for (var i = 0; i < name.length; i++) {
+  //   bool hasTwo = false;
+
+  //   for (var j = 0; j < ochenki[i].length; j++) {
+  //     if (ochenki[i][j] == 2) {
+  //       hasTwo = true;
+  //       break;
+  //     }
+  //   }
+
+  //   if (!hasTwo) {
+  //     print("Без двоек: ${name[i]}");
+  //   }
+  // }
+
+  // // - Выводить имена студентов, у которых все оценки не ниже 4.
+  // for (var i = 0; i < name.length; i++) {
+  //   bool goodStudent = true;
+
+  //   for (var j = 0; j < ochenki[i].length; j++) {
+  //     if (ochenki[i][j] < 4) {
+  //       goodStudent = false;
+  //       break;
+  //     }
+  //   }
+
+  //   if (goodStudent) {
+  //     print("Все оценки >=4: ${name[i]}");
+  //   }
+  // }
+
+  // //Кортежи
+
+  // var person = ("Putana", 45);
+  // print(person.$1);
+
+  // var a = [1, 2, 3];
+  // a.where((element) => element > 2).toList(); //Итерабле в лист, ченахуя зачем
+  // a.map((element) => element * 2);
+
+  // a.fold(100, (a, b) => a + b); // сумма с заготовленным числом чеее блять
+  // a.every((b) => b > 4);
+
+  // a.skipWhile((a) => a.isOdd); //Пропускает пока не равно условию
+  // a.takeWhile((a) => a.isOdd); //Выведет те которые равны условию
+
+  // var s = [1, 2, 3, 45, 4].take(3).skip(3);
+
+  // void hello() {
+  //   print('hello');
+  // }
+
+  // hello();
+
+  // void hello1() => print('htllo');
+
+  // const local_main = "local_main";
+
+  // if (true) {
+  //   String local_if = "local_if";
+  //   print(local_if);
+  //   print(local_main);
+  //   print(global);
+  // }
+
+  // void sum(int one, int two) {
+  //   print(one + two);
+  // }
+
+  // sum(1, 2);
+
+  // void name(name, surname) {
+  //   print("govno ${name}");
+  //   print("pisya ${surname}");
+  // }
+
+  //   int mul(int x, int y) {
+  //     return x * y;
+  //   }
+
+  //   int mul2(int x, int y) => x * y;
+
+  //   Function func = mul;
+  //   func = mul2;
+
+  //   void oper(int a, int b, Function func1) {
+  //     int rez = func1(a, b);
+  //     print(rez);
+  //   }
+
+  //   oper(3, 2, (x, y) => x + y);
+
+  //   int div(d, v) => d - v;
+  //   int Function(int, int) fun1 = div;
+
+  //   fun1(5, 6);
+
+  //   int Function(int, int) add = (int a, int b) {
+  //     return a + b;
+  //   };
+
+  //   void t(int n, void Function() j) {
+  //     for (var i = 0; i < n; i++) {
+  //       j();
+  //     }
+  //   }
+
+  //   t(2, () => print('privet'));
+
+  //   void callback(void Function() h) {
+  //     print('работа функции');
+  //     print('окончена');
+  //     h();
+  //   }
+
+  //   callback(() => "Колбэк");
+
+  //   int Function(int) make(int x) {
+  //     return (int f) {
+  //       return x * f;
+  //     };
+  //   }
+
+  //   var g = make(5);
+  //   print(g(5));
+
+  //   int s = 5;
+  //   var list = [1, 2, 3];
+  //   print(list.map((e) => e * s));
+
+  //   String pr = "pp";
+  //   var printer = (String value) => print('$pr: $value');
+
+  //   status1(Status.onTheWay);
+  //   Day DayToday = Day.wednesday;
+
+  //   switch (DayToday) {
+  //     case Day.monday:
+  //       print('понедельник');
+  //     case Day.tuesday:
+  //       print('понедельник');
+  //     case Day.wednesday:
+  //       print('понедельник');
+  //     case Day.thursday:
+  //       print('понедельник');
+  //     default:
+  //       print('5 пар');
+  //   }
+
+  //   for (var i in Status.values) {
+  //     print(i);
+  //     print(i.index);
+  //     print(i.name);
+  //   }
+
+  //   String str = "ФИС";
+  //   print(str.runes);
+
+  //   String emoji = "😂";
+  //   print(emoji.runes.first.toRadixString(16));
+  // }
+
+  // enum Role {
+  //   admin("Админ", 1),
+  //   user("Юзер", 2);
+
+  //   final String title;
+  //   final int priorety;
+
+  //   const Role(this.title, this.priorety);
+  // }
+
+  // enum Car {
+  //   red,
+  //   yellow,
+  //   green;
+
+  //   bool get canGo => this == Car.red;
+  // }
+
+  // enum Day { monday, tuesday, wednesday, thursday, friday, satuday, sunday }
+
+  // enum Status { processing, onTheWay, ready }
+
+  // void status(int status) {
+  //   if (status == 1) {
+  //     print("Обработка закакза");
+  //   } else if (status == 2) {
+  //     print("В пути");
+  //   } else if (status == 3) {
+  //     print("Готво");
+  //   }
+  // }
+
+  // void status1(status) {
+  //   if (status == Status.processing) {
+  //     print("Обработка закакза");
+  //   } else if (status == Status.onTheWay) {
+  //     print("В пути");
+  //   } else if (status == Status.ready) {
+  //     print("Готво");
+  //   }
+  // }
+
+  print("Введите ваше имя: ");
+  var name = stdin.readLineSync();
+
+  print("Генерируем случайное настроение");
+  var random = Random();
+  var mood = Mood.values[random.nextInt(Mood.values.length)];
+
+  print(
+    "Привет, $name Твое настроение: ${mood.emoji} ${mood.description}"
+    "(энергия: ${mood.energy}/10)",
+  );
+
+  var code = mood.emoji.runes.first;
+  var hex = code.toRadixString(16);
+
+  print("Юникод эмодзи: U+$hex");
+  print("Хотите просмотреть сложные эмодзи?: ");
+  var answer = stdin.readLineSync();
+
+  if (answer == "yes") {
+    print("Введите комбинацию эмодзи: ");
+    var text = stdin.readLineSync(encoding: utf8) ?? "";
+
+    print('Анализ строки "$text":\n');
+
+    print("16битный: ${text.length}");
+    print("Кодовых точек: ${text.runes.length}");
+    print("Реальных символов: ${text.runes.length}\n");
+
+    print("Подробный вывод юникода:");
+
+    var i = 1;
+    for (var rune in text.runes) {
+      var symbol = String.fromCharCode(rune);
+      var unicode = "U+${rune.toRadixString(16).toUpperCase().padLeft(6, '0')}";
+
+      print("Символ $i: $symbol ($unicode)");
+      i++;
     }
   }
+}
 
-  // Задание 3 Вычислять и выводить средний балл по каждому предмету в группе
-  //(по каждому предмету отдельно).
-  for (var j = 0; j < predmeti.length; j++) {
-    double sum = 0;
+enum Mood {
+  happy("\u{1F600}", "радостный", 10),
+  cool("\u{1F60E}", "взволнованный", 10),
+  sad("\u{1F622}", "грустный", 1),
+  angry("\u{1F620}", "злой", 7),
+  sleepy("\u{1F62A}", "сонный", 0);
 
-    for (var i = 0; i < ochenki.length; i++) {
-      sum += ochenki[i][j];
-    }
+  final String emoji;
+  final String description;
+  final int energy;
 
-    print("Средний балл по предмету: ${predmeti[j]} (${sum / ochenki.length})");
-  }
-  print("");
-
-  // Задание 4 Вычислять и выводить средний балл каждого студента по всем его предметам.
-  for (var i = 0; i < name.length; i++) {
-    double sum = 0;
-    for (var j = 0; j < ochenki[i].length; j++) {
-      sum += ochenki[i][j];
-    }
-    print("Ученик: ${name[i]} Его средних балл: ${sum / ochenki[i].length}");
-  }
-
-  // Задание 5 Определять и выводить лучшего студента по среднему баллу (имя и средний балл).
-  double maxAvg = 0;
-  String bestStudent = "";
-
-  for (var i = 0; i < name.length; i++) {
-    double sum = 0;
-
-    for (var j = 0; j < ochenki[i].length; j++) {
-      sum += ochenki[i][j];
-    }
-
-    double avg = sum / ochenki[i].length;
-
-    if (avg > maxAvg) {
-      maxAvg = avg;
-      bestStudent = name[i];
-    }
-  }
-
-  print("Лучший студент: $bestStudent со средним баллом $maxAvg");
-
-  // Задание 6 Определять и выводить предмет с наименьшим средним баллом в группе.
-  double minAvg = 999;
-  String worstSubject = "";
-
-  for (var j = 0; j < predmeti.length; j++) {
-    double sum = 0;
-
-    for (var i = 0; i < ochenki.length; i++) {
-      sum += ochenki[i][j];
-    }
-
-    double avg = sum / ochenki.length;
-
-    if (avg < minAvg) {
-      minAvg = avg;
-      worstSubject = predmeti[j];
-    }
-  }
-
-  print("Предмет с самым низким средним баллом: $worstSubject ($minAvg)");
-
-  // - Выводить общий средний балл по всей группе (по всем студентам и всем предметам).
-  double sum = 0;
-  int count = 0;
-
-  for (var i = 0; i < ochenki.length; i++) {
-    for (var j = 0; j < ochenki[i].length; j++) {
-      sum += ochenki[i][j];
-      count++;
-    }
-  }
-
-  print("Общий средний балл группы: ${sum / count}");
-
-  // - Формировать и выводить перечень всех предметов без повторов и их количество.
-  Set<String> bezpovtor = predmeti.toSet();
-
-  print("Предметы:");
-  for (var s in bezpovtor) {
-    print(s);
-  }
-  print("Количество предметов: ${bezpovtor.length}");
-
-  // - Выводить имена студентов, у которых нет ни одной оценки 2.
-  for (var i = 0; i < name.length; i++) {
-    bool hasTwo = false;
-
-    for (var j = 0; j < ochenki[i].length; j++) {
-      if (ochenki[i][j] == 2) {
-        hasTwo = true;
-        break;
-      }
-    }
-
-    if (!hasTwo) {
-      print("Без двоек: ${name[i]}");
-    }
-  }
-
-  // - Выводить имена студентов, у которых все оценки не ниже 4.
-  for (var i = 0; i < name.length; i++) {
-    bool goodStudent = true;
-
-    for (var j = 0; j < ochenki[i].length; j++) {
-      if (ochenki[i][j] < 4) {
-        goodStudent = false;
-        break;
-      }
-    }
-
-    if (goodStudent) {
-      print("Все оценки >=4: ${name[i]}");
-    }
-  }
+  const Mood(this.emoji, this.description, this.energy);
 }
