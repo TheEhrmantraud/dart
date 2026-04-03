@@ -811,7 +811,7 @@ void main() {
   // }
 
   print("Введите ваше имя: ");
-  var name = stdin.readLineSync();
+  var name = stdin.readLineSync(encoding: utf8);
 
   print("Генерируем случайное настроение");
   var random = Random();
@@ -829,7 +829,7 @@ void main() {
   print("Хотите просмотреть сложные эмодзи?: ");
   var answer = stdin.readLineSync();
 
-  if (answer == "yes") {
+  if (answer == "y") {
     print("Введите комбинацию эмодзи: ");
     var text = stdin.readLineSync(encoding: utf8) ?? "";
 
@@ -849,15 +849,19 @@ void main() {
       print("Символ $i: $symbol ($unicode)");
       i++;
     }
+  } else if (answer == "n") {
+    print("Ну пока");
+  } else {
+    print("Введи чтото други");
   }
 }
 
 enum Mood {
-  happy("\u{1F600}", "радостный", 10),
-  cool("\u{1F60E}", "взволнованный", 10),
-  sad("\u{1F622}", "грустный", 1),
-  angry("\u{1F620}", "злой", 7),
-  sleepy("\u{1F62A}", "сонный", 0);
+  happy("\u{1F600}", "радостни", 10),
+  cool("\u{1F60E}", "взволнованни", 10),
+  sad("\u{1F622}", "грустни", 1),
+  angry("\u{1F620}", "зли", 7),
+  sleepy("\u{1F62A}", "сонни", 0);
 
   final String emoji;
   final String description;
