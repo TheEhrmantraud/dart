@@ -1140,7 +1140,7 @@ class Square extends Shape {
 
 // 9
 class Conv {
-  String toBin(int n) {
+  String conv(int n) {
     return n.toRadixString(2);
   }
 }
@@ -1221,7 +1221,7 @@ void main() {
 
   print("\n\n\n\n\n9. Счисление");
   var conv = Conv();
-  print(conv.toBin(10));
+  print(conv.conv(10));
 
   print("\n\n\n\n\n10. Cтол");
   var table = Table();
